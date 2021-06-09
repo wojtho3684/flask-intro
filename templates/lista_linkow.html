@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Moje listowe powitanie z szablonem we Flasku</title>
+    </head>
+    <body>
+        <h1>Lista linków do zasobów</h1>
+        <ol>
+        {% for url in lista %}
+            <li>{{ url }}</li>
+        {% endfor %}
+    </ol>
+        <h1>Możemy również użyć tych nazw w odnośnikach</h1>
+        <ol>
+        {% for url in lista %}
+            <li> <a href="{{ url }}">Link wiodący do {{ url }}</a>     </li>
+        {% endfor %}
+        </ol>
+
+        <p>Funkcji flaska możemy używać również bezpośrednio w szablonach: link do <a href="{{ url_for('powitanie1', i = 'Tytus') }}">powitania Tytusa</a></p>
+
+</html>
