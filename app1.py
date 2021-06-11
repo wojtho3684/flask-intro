@@ -17,14 +17,16 @@ def powitanie1(imie):
 # Funkcja wyświetlająca imię i nazwisko podane w adresie
 @app.route('/osoba/<imie>/<nazwisko>')
 def powitanie2(imie, nazwisko):
-    return '<H1>Witaj ' + imie + ' ' + nazwisko + '!</H1>'
+    wynik = '<H1>Witaj ' + imie + ' ' + nazwisko + '!</H1>' 
+    return wynik
 
 
 # Funkcja wyliczająca kwadrat liczby. Flask wymusza podanie w adresie strony wartości liczbowej
 @app.route('/kwadrat/<int:liczba>')
 def funkcja1(liczba):
     kwadrat = liczba * liczba
-    return f'<H1>Kwadrat z {liczba} wynosi {kwadrat} </H1>'
+    wynik = f'<H1>Kwadrat z {liczba} wynosi {kwadrat} </H1>' 
+    return wynik
 
 
 if __name__ == "__main__":
