@@ -23,7 +23,6 @@ def linki1():
     l.append(url_for('powitanie1', i = 'Ula'))
     l.append(url_for('powitanie1', i = "Marek"))
     l.append(url_for('powitanie2', imie = "Kasia"))
-    l.append(url_for('powitanie4'))
     l.append(url_for('obrazek1'))
     return render_template('lista_linkow.html', lista = l)
 
