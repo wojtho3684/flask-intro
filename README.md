@@ -3,8 +3,8 @@
 ## Pobieranie i inicjowanie środowiska:
 
 1. Otwórz okno linii poleceń.
-2. Pobierz repozytorium z GitHub'a: `git clone https://github.com/WojciechThomas/bdwi2021-2.git`
-3. Wejdź do pobranego folderu: `cd bdwi2021-2`
+2. Pobierz repozytorium z GitHub'a: `git clone https://github.com/WojciechThomas/bdwi-2.git`
+3. Wejdź do pobranego folderu: `cd bdwi-2`
 4. Utwórz wirtualne środowisko Pythona: `python -m venv venv`
 5. Aktywuj wirtualne środowisko Pythona (przejrzyj Uwagi poniżej): `.\venv\Scripts\activate.bat`
 6. Zaktualizuj instalator pip: `python -m pip install --upgrade pip`
