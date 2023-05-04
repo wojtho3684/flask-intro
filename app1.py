@@ -2,31 +2,33 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# Funkcja wyświetlająca przywitanie, po wpisaniu w przeglądarce: http://localhost/
+# http://localhost:5000/ displays "Welcome!"
+
+
 @app.route('/')
 def index():
-    return '<H1>Witaj!</H1>'
+    return '<H1>Welcome!</H1>'
 
 
-# Funkcja wyświetlająca imię podane w adresie strony np.: http://localhost/osoba/Maria
-@app.route('/osoba/<imie>')
-def powitanie1(imie):
-    return '<H1>Witaj ' + imie + '!</H1>'
+# http://localhost:5000/person/Jane displays "Welcome Jane!". Try to use different names.
+@app.route('/person/<fname>')
+def greeting1(fname):
+    return '<H1>Welcome ' + fname + '!</H1>'
 
 
-# Funkcja wyświetlająca imię i nazwisko podane w adresie
-@app.route('/osoba/<imie>/<nazwisko>')
-def powitanie2(imie, nazwisko):
-    wynik = '<H1>Witaj ' + imie + ' ' + nazwisko + '!</H1>' 
-    return wynik
+# http://localhost:5000/person/Jane/Doe displays first and last name provided
+@app.route('/person/<fname>/<lname>')
+def greeting2(fname, lname):
+    output = '<H1>Welcome ' + fname + ' ' + lname + '!</H1>'
+    return output
 
 
-# Funkcja wyliczająca kwadrat liczby. Flask wymusza podanie w adresie strony wartości liczbowej
-@app.route('/kwadrat/<int:liczba>')
-def funkcja1(liczba):
-    kwadrat = liczba * liczba
-    wynik = f'<H1>Kwadrat z {liczba} wynosi {kwadrat} </H1>' 
-    return wynik
+# http://localhost:5000/square/4 - you have to use a number to get a result
+@app.route('/square/<int:anumber>')
+def square(anumber):
+    square = anumber * anumber
+    output = f'<H1>{anumber} * {anumber} = {square} </H1>'
+    return output
 
 
 if __name__ == "__main__":

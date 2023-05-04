@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Sample list of links</title>
+    </head>
+    <body>
+        <h1>The list of resources links</h1>
+        <ol>
+        {% for url in list %}
+            <li>{{ url }}</li>
+        {% endfor %}
+    </ol>
+        <h1>You can use variable in any place</h1>
+        <ol>
+        {% for url in list %}
+            <li> <a href="{{ url }}">This link connect to {{ url }}</a>     </li>
+        {% endfor %}
+        </ol>
+
+        <p>We can use Flask functions directly in templates:<br>
+        link to the <a href="{{ url_for('welcome1', i = 'Bob') }}">Bob welcome.</a></p>
+
+</html>

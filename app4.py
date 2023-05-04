@@ -2,21 +2,20 @@ from flask import Flask, url_for, redirect, request, make_response, render_templ
 
 app = Flask(__name__)
 
-# Szablon formularz.html wyświetla formularz umożliwiający wpisnie imienia i wysłanie go do strony /przywitanie
-@app.route("/formularz")
-def wyswietl_formularz():
-    return render_template("formularz.html")
+@app.route("/form")
+def display_form():
+    return render_template("form.html")
 
 
-# Strona /przywitanie odczytuje dane przesłane z formularza i wyświetla je przy pomocy szablonu przywitanie.html.
-@app.route('/przywitanie', methods = ['POST','GET'])
-def obsluga_formularza():
+# Page /welcome reads data from the form and displays them using template greeting.html
+@app.route('/greeting', methods = ['POST','GET'])
+def handle_form():
 
     if request.method == 'POST':
-        i = request.form['imie']
-        return render_template('przywitanie.html', imie = i)
+        i = request.form['fname']
+        return render_template('greeting.html', fname = i)
     else:
-        return redirect(url_for('wyswietl_formularz'))
+        return redirect(url_for('display_form'))
 
 
 if __name__ == "__main__":

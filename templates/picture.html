@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>The Flask template with the picture</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" type="text/css" media="screen" />
+    </head>
+    <body>
+        <h1>This is a picture</h1>
+        <img src="{{ url_for('static', filename = 'linux_logo.png') }}" alt="Penguin" />
+    </body>
+</html>
+

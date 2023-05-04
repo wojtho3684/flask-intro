@@ -2,33 +2,33 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Funkcja wyświetlająca stronę przy pomocy szablonu index.html trzymanego w folderze templates/
+# Use index.html template
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-# Funkcja wyświetlająca przywitanie osoby o imieniu podanym w adresie strony. Imię przekazywane jest do szablonu.
-@app.route('/osoba/<i>')
-def powitanie1(i):
-    return render_template('osoba1.html', imie = i)
+# Here the name must be used
+@app.route('/greeting1/<i>')
+def greeting1(i):
+    return render_template('person1.html', fname = i)
 
 
-# J.w. tylko szablon osoba2.html zmienia swoje działanie w zależności od tego czy podano imię, czy nie.
-@app.route('/ktos/<i>')
-def powitanie2(i):
-    return render_template('osoba2.html', imie = i)
+# Accepts also empty requests
+@app.route('/greeting2/<i>')
+def greeting2(i):
+    return render_template('person2.html', fname = i)
 
-@app.route("/ktos")
-def powitanie3():
-    return render_template('osoba2.html')
+@app.route("/greeting3")
+def greeting3():
+    return render_template('person2.html')
 
 
-# Szablon lista.html wyświetla osoby na liście numerowanej.
-@app.route("/lista")
-def powitanie4():
-    l = ["Maja", "Ola", "Ania", "Andrzej"]
-    return render_template('lista.html', lista = l)
+# Use Python list to display a list of people
+@app.route("/list")
+def greeting4():
+    l = ["Ben", "Monica", "Ann", "Bob"]
+    return render_template('list.html', list = l)
 
 
 if __name__ == "__main__":
