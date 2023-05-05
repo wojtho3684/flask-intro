@@ -1,30 +1,36 @@
-# "Budowa i działanie witryn internetowych" - laboratorium 2
+# Your first Flask application
 
-## Pobieranie i inicjowanie środowiska:
+## Creating the environment
 
-1. Otwórz okno linii poleceń.
-2. Pobierz repozytorium z GitHub'a: `git clone https://github.com/WojciechThomas/bdwi-2.git`
-3. Wejdź do pobranego folderu: `cd bdwi-2`
-4. Utwórz wirtualne środowisko Pythona: `python -m venv venv`
-5. Aktywuj wirtualne środowisko Pythona (przejrzyj Uwagi poniżej): `.\venv\Scripts\activate.bat`
-6. Zaktualizuj instalator pip: `python -m pip install --upgrade pip`
-7. Zainstaluj wszystkie potrzebne biblioteki: `pip install -r requirements.txt`
+1. Open terminal
+2. Clone the GitHub repository with examples: `git clone git@github.com:wsbwt/flask-intro.git`
+3. Open folder with projects: `cd flask-intro`
+4. Create the Python virtual environment: `python -m venv .venv`
+5. Activate the Python virtual environment: (see Notices below)
+6. If the environment is activated you should see `(.venv)` at the start of the line!
+7. Update pip installer: `python -m pip install --upgrade pip`
+8. Install required libraries: `pip install -r requirements.txt`
+9. You can also start Visual Studio Code to edit apps: `code .` (watch the dot). 
 
-### Uwagi:
+   VSCode should recognize virtual environment and use it (see: bottom right corner).
 
-- Jeśli używasz systemu MacOS lub Linux w punkcie 5. użyj polecenia `/venv/Scripts/activate`
-- Jeśli używasz okna Powershell w systemie Windows:
-  - po otwarciu nowego okna uruchom polecenie `Set-ExecutionPolicy RemoteSigned -Scope Process`
-  - w punkcie 5. użyj polecenia `.\venv\Scripts\Activate.ps1`
-- Nie używaj do pracy z Pythonem okna Git Bash w systemie Windows.
+### Notices
 
-## Uruchamianie aplikacji
+- If you use **MacOS** or **Linux**, in step 5 use command `.venv/bin/activate`
+- If you use **CMD** (Command line) in **Windows**:
+  - In terminal
+- If you use **PowerShell** in **Windows**:
+  - In the new window run command: `Set-ExecutionPolicy RemoteSigned -Scope Process`
+  - In step 5 use command: `.\venv\Scripts\Activate.ps1`
+- In Windows *do not use* Git Bash window.
 
-Możesz przetestować swoją instalację wpisując: `python app1.py`
+## Running your application
 
-Jeśli wszystko jest poprawnie zainstalowane na ekranie powinny pojawić się komunikaty:
+You can test your app using command eg.: `python app1.py`
 
-```
+If everything has been installed correctly you should see:
+
+```text
  * Serving Flask app "app1" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
@@ -33,11 +39,9 @@ Jeśli wszystko jest poprawnie zainstalowane na ekranie powinny pojawić się ko
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 123-456-789
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- ```
- 
- Po wpisaniu w oknie przeglądarki internetowej podanego adresu (`http://127.0.0.1:5000` lub `http://localhost:5000`) przeglądarka 
- powinna wyświetlić stronę aplikacji Flask. Działanie aplikacji zakończysz naciskając w oknie konsoli `Ctrl-C`.
- 
- Powodzenia!
+ * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
+```
 
+When you start the browser and open page (`http://127.0.0.1:8080` lub `http://localhost:8080`) the browser should display results from the Flask application. You can stop your application in console with `Ctrl+C`.
+
+In these examples we use port **8080** instead of the default Flask port **5000** to allow the preview of application when started in AWS Cloud9 environment.
